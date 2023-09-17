@@ -1,2 +1,2 @@
-const baseURL = "http://localhost:8080";
+const baseURL = "https://professional-resume-builder.onrender.com";
 export default baseURL;
