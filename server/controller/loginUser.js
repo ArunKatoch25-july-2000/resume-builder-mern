@@ -20,7 +20,8 @@ const loginUser = async (req, res) => {
           .cookie("uid", token, {
             expires: new Date(Date.now() + 25892000000),
             httpOnly: true,
-            SameSite: false,
+            sameSite: "none",
+            secure: true,
           })
           .json({ success: "user login Successfully..." });
       } else {

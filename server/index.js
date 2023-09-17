@@ -4,7 +4,7 @@ const cors = require("cors");
 require("./connection/conn");
 
 const app = express();
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 const userRouter = require("./routes/userRouter.js");
 const cookieParser = require("cookie-parser");
 app.use(express.json());
