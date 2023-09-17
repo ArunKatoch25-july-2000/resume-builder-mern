@@ -28,7 +28,7 @@ const Navbar = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const getUserLoginStatus = await axios.get(`${baseURL}`, {
+      const getUserLoginStatus = await axios.get(`${baseURL}/`, {
         credentials: "include",
         withCredentials: true,
       });
@@ -40,7 +40,7 @@ const Navbar = () => {
       }
     }
     fetchData();
-  }, [loginStatus]);
+  }, []);
   return (
     <nav className="flex items-center justify-between p-2 bg-sky-400 relative sm:px-5 sm:py-2">
       {/* ------ Logo ----- */}
