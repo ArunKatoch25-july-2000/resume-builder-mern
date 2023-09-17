@@ -33,6 +33,7 @@ const ChangePassword = () => {
             password: userDetails.password,
           },
           {
+            headers: { "content-type": "application/x-www-form-urlencoded" },
             credentials: "include",
             withCredentials: true,
           }

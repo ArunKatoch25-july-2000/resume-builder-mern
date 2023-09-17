@@ -6,6 +6,7 @@ import axios from "axios";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import { SpinnerCircular } from "spinners-react";
+import baseURL from "../Login_SignUp/baseUrl";
 const ResumeDisplay = lazy(() =>
   import("../Templates/BlankTempComp/ResumeDisplay")
 );
@@ -17,13 +18,10 @@ const PreviewResume = () => {
   const navigate = useNavigate();
   const downloadPDF = async (e) => {
     e.preventDefault();
-    const res = await axios.get(
-      `http://localhost:8080/get-started/${tempName}/preview`,
-      {
-        credentials: "include",
-        withCredentials: true,
-      }
-    );
+    const res = await axios.get(`${baseURL}/get-started/${tempName}/preview`, {
+      credentials: "include",
+      withCredentials: true,
+    });
     const msg = await res.data.msg;
     if (msg === "authenticated user") {
       window.alert("Click ok to start downloading...");

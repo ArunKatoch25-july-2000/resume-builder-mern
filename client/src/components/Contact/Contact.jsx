@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import axios from "axios";
 import contact from "../../assets/contact.svg";
 import { RiContactsLine } from "react-icons/ri";
+import baseURL from "../Login_SignUp/baseUrl";
 const inputCss = "w-[18rem] border px-1 py-2 outline-blue-400 rounded-sm";
 
 const Contact = () => {
@@ -37,7 +38,7 @@ const Contact = () => {
     }
 
     const submitForm = await axios.post(
-      "http://localhost:8080/contact",
+      `${baseURL}/contact`,
       userContact,
       {
         credentials: "include",
