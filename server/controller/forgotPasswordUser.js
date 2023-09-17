@@ -13,7 +13,7 @@ const forgotPasswordUser = async (req, res) => {
       const token = jwt.sign({ userId: checkUser._id }, secret, {
         expiresIn: "5m",
       });
-      const resetLink = `http://localhost:5173/resetpassword/${token}/${checkUser._id}`;
+      const resetLink = `https://resume-builder-mern.vercel.app/resetpassword/${token}/${checkUser._id}`;
       const details = {
         from: process.env.EMAIL,
         to: checkUser.email,
